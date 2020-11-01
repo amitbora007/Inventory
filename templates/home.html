@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} {{choice}}{% endblock %}
+
+
+{% block homeheading %} Data{% endblock %}
+{% block heading %} {{choice}}{% endblock %}
+
+{% block datatable %}
+    <table id="results" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Distributer</th>
+                <th>D. location</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for value in data %}
+                <tr> 
+                    <td>{{value.name}}</td>
+                    <td>{{value.qty}}</td>
+                    <td>{{value.totalprice}}</td>
+                    <td>{{value.dname}}</td>
+                    <td>{{value.dloc}}</td>
+                    <td><i class="fas fa-edit" style="color:green"></i></td>
+                    <td><a href="/delete/{{value.name}}"><i class="fas fa-minus-circle" style="color:red"></i></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>        
+ 
+    
+{% endblock %}
+
