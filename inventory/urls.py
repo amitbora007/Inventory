@@ -19,6 +19,7 @@ from web import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('home', views.home),
     path('stationary/<str:option>', views.stationary),
     path('electronics/<str:option>', views.electronics),
     path('accessories/<str:option>', views.accessories),
@@ -26,5 +27,6 @@ urlpatterns = [
     path('about', views.about),
     path('contact', views.contact),
     path('add', views.add),
+    path('logout', views.lgout)
     
 ]
